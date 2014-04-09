@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon
+    id="plugin.video.rss-feeds"
+    version="0.0.1"
+    name="RSS Feeds"
+    provider-name="Chadders">
+  <requires>
+    <import addon="xbmc.python" version="2.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="addon.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <language>en</language>
+    <platform>all</platform>
+    <summary>RSS Feeds</summary>
+    <description>RSS Feeds</description>
+  </extension>
+</addon>
