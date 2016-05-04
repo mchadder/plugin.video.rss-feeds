@@ -11,7 +11,7 @@ FEEDS = {
 def addLink(name, url, img="DefaultVideo.png"):
     li = xbmcgui.ListItem(name, iconImage=img)
     li.setProperty("IsPlayable", "true")
-    li.setInfo(type="Video", infoLabels={"Title":"%s"%name, "Plot":"Hello there", "Tagline":"Label222", "PlotOutline":"Hellodingle"})
+    li.setInfo(type="Video", infoLabels={"Title":"%s"%name})
     xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]),url=url,listitem=li, isFolder=False)
 
 def addDir(name,path,img="DefaultFolder.png"):
