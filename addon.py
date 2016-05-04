@@ -1,14 +1,11 @@
 import xbmcplugin, xbmcgui, xbmcaddon, urllib2, sys, urlparse
 import xml.etree.ElementTree as etree
 
-FEEDS = { "OWASP Uploads": { "url":"http://gdata.youtube.com/feeds/base/users/OWASPGLOBAL/uploads?alt=rss",
-                             "img":"https://yt3.ggpht.com/-DYIhxCnD52Q/AAAAAAAAAAI/AAAAAAAAAAA/1oqAUTc5Jm8/s100-c-k-no/photo.jpg" },
-          "OWASP AppSec Tutorials": { "url":"http://gdata.youtube.com/feeds/base/users/AppsecTutorialSeries/uploads?alt=rss",
-                               "img":"https://yt3.ggpht.com/-DYIhxCnD52Q/AAAAAAAAAAI/AAAAAAAAAAA/1oqAUTc5Jm8/s100-c-k-no/photo.jpg" },
-          "DEFCON Conference":{ "url":"http://gdata.youtube.com/feeds/base/users/DEFCONConference/uploads?alt=rss",
-                                "img":"http://i1.ytimg.com/i/6Om9kAkl32dWlDSNlDS9Iw/mq1.jpg?v=51719028" },
-          "SecurityTube": { "url":"http://gdata.youtube.com/feeds/base/users/TheSecurityTube/uploads?alt=rss",
-                            "img":"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSHKtoYWyTShWr9a4jAvnCmgkqFRRg39BaBDQaxA1KB34rBead8" }
+FEEDS = { 
+          "SecurityTube": { "url":"http://www.youtube.com/feeds/videos.xml?channel_id=UCBRNlyf9lURksAEnM-pyQdA",
+                            "img":"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSHKtoYWyTShWr9a4jAvnCmgkqFRRg39BaBDQaxA1KB34rBead8" },
+          "PyVideo.org": { "url":"http://pyvideo.org/video/rss",
+                           "img":"https://duckduckgo.com/i/a61af354.png" }
         }
 
 def addLink(name, url, img="DefaultVideo.png"):
@@ -22,28 +19,53 @@ def addDir(name,path,img="DefaultFolder.png"):
     li=xbmcgui.ListItem(name, iconImage=img)
     xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]),url=u,listitem=li,isFolder=True)
 
-def addYoutubeLink(title, url, id):
+def addVideoLink(title, urls):
+  url = [u for u in urls if "youtube.com" in u]
+  id = ""
+  try:
+    url = url[0]
     paramArray = url.split("?")[1].split("&")
     for param in paramArray:
-        name, value = param.split("=")
-        if name == "v":
-            id = value;
+      name, value = param.split("=")
+      if name == "v":
+          id = value;
 
     addLink(title, "plugin://plugin.video.youtube?path=/root/video&action=play_video&videoid=%s"%id, "http://img.youtube.com/vi/%s/hqdefault.jpg"%id)
+  except Exception as e:
+    addLink("NOT youtube! %s"%title, "", "")
 
 def showLinks(feed):
    try:
        xml = urllib2.urlopen(feed).read()
        root = etree.fromstring(xml)
+       urls = []
+       title = ""
+       # Process an RSS feed first (channel/item)
        for itm in root.findall("./channel/item"):
-           for itmelems in itm:
-               if itmelems.tag == "title":
-                   title = itmelems.text
-               elif itmelems.tag == "link":
-                   link = itmelems.text
-           addYoutubeLink(title, link, id)
+         for itmelems in itm:
+             if itmelems.tag == "title":
+               title = itmelems.text
+             elif itmelems.tag == "link":
+               urls.append(itmelems.text)
+             elif itmelems.tag == "enclosure":
+               urls.append(itmelems.attrib["url"])
+           
+         addVideoLink(title, urls)
+       
+       urls = []
+       title = ""
+       # Check for a possible ATOM feed
+       ns = {"atom":"http://www.w3.org/2005/Atom"}
+       for itm in root.findall("./atom:entry",ns):
+         for itmelems in itm:
+           if itmelems.tag == "{%s}title"%ns["atom"]:
+             title = itmelems.text
+           elif itmelems.tag == "{%s}link"%ns["atom"]:
+             urls.append(itmelems.attrib["href"])
+
+         addVideoLink(title, urls)
    except Exception as e:
-       addLink("%s"%e,"")
+       addLink("%s (%s)"%(e,"ShowLinks()"),"")
 
 def showFeeds():
    for key in FEEDS:
