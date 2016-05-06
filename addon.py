@@ -9,6 +9,7 @@ FEEDS = {
           "OWASP AppSec Tutorial Series": { "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UC5xIEA6L0C2IG3iWgs8M2cA" },
           "MongoDB": { "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCK_m2976Yvbx-TyDLw7n1WA" },
           "Security Now!": { "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCNbqa_9xihC8yaV2o6dlsUg" },
+          "The Tech Guy": { "url":"https://www.youtube.com/feeds/videos.xml?channel_id=UCWAAgw0UiWLZqyA6eJzhbug" },
           "Dan Boneh - Cryptography Lectures": { "url": "https://www.youtube.com/feeds/videos.xml?playlist_id=PL9oqNDMzcMClAPkwrn5dm7IndYjjWiSYJ" }
         }
 
