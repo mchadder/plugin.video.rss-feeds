@@ -2,6 +2,7 @@ import xbmcplugin, xbmcgui, xbmcaddon, urllib2, sys, urlparse
 import xml.etree.ElementTree as etree
 
 FEEDS = { 
+          "ZAProxy": { "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UC-3qyzm4f29C12KGp3-12bQ" },
           "PyVideo.org": { "url":"http://pyvideo.org/video/rss" },
           "IEEE Symposium on Security and Privacy": { "url":"https://www.youtube.com/feeds/videos.xml?channel_id=UC6pXMS7qre9GZW7A7FVM90Q" },
           "Nginx": {"url":"https://www.youtube.com/feeds/videos.xml?channel_id=UCy6gt7XvGJ3AGpSon2pS4nQ" },
