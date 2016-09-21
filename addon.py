@@ -3,7 +3,10 @@ import xml.etree.ElementTree as etree
 
 FEEDS = { 
           "ZAProxy": { "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UC-3qyzm4f29C12KGp3-12bQ" },
-          "PyVideo.org": { "url":"http://pyvideo.org/video/rss" },
+          "EuroPython 2016": { "url":"https://www.youtube.com/feeds/videos.xml?playlist_id=PL8uoeex94UhE3FDvjacSlHFffoNEoPzzm" },
+          "EuroPython 2015": { "url":"https://www.youtube.com/feeds/videos.xml?playlist_id=PL8uoeex94UhGGUH0mFb-StlZ1WYGWiJfP" },
+          "PyCon 2016": { "url":"https://www.youtube.com/feeds/videos.xml?channel_id=UCwTD5zJbsQGJN75MwbykYNw"},
+          "PyCon 2015": { "url":"https://www.youtube.com/feeds/videos.xml?channel_id=UCgxzjK6GuOHVKR_08TT4hJQ"},
           "IEEE Symposium on Security and Privacy": { "url":"https://www.youtube.com/feeds/videos.xml?channel_id=UC6pXMS7qre9GZW7A7FVM90Q" },
           "Nginx": {"url":"https://www.youtube.com/feeds/videos.xml?channel_id=UCy6gt7XvGJ3AGpSon2pS4nQ" },
           "OWASP": {"url":"https://www.youtube.com/feeds/videos.xml?channel_id=UCe8j61ABYDuPTdtjItD2veA" },
