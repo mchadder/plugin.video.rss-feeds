@@ -2,6 +2,7 @@ import xbmcplugin, xbmcgui, xbmcaddon, urllib2, sys, urlparse
 import xml.etree.ElementTree as etree
 
 FEEDS = { 
+          "BsidesLV": { "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCpNGmljppAJbTIA5Msms1Pw" },
           "ZAProxy": { "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UC-3qyzm4f29C12KGp3-12bQ" },
           "EuroPython 2016": { "url":"https://www.youtube.com/feeds/videos.xml?playlist_id=PL8uoeex94UhE3FDvjacSlHFffoNEoPzzm" },
           "EuroPython 2015": { "url":"https://www.youtube.com/feeds/videos.xml?playlist_id=PL8uoeex94UhGGUH0mFb-StlZ1WYGWiJfP" },
