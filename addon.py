@@ -5,17 +5,18 @@ FEEDS = {
           "BsidesLV": { "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCpNGmljppAJbTIA5Msms1Pw" },
           "ZAProxy": { "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UC-3qyzm4f29C12KGp3-12bQ" },
           "EuroPython 2016": { "url":"https://www.youtube.com/feeds/videos.xml?playlist_id=PL8uoeex94UhE3FDvjacSlHFffoNEoPzzm" },
+          "AppSec EU 2016": { "url":"https://www.youtube.com/feeds/videos.xml?playlist_id=PLpr-xdpM8wG-Kf1_BOnT2LFZU8_SXfpKL" },
           "EuroPython 2015": { "url":"https://www.youtube.com/feeds/videos.xml?playlist_id=PL8uoeex94UhGGUH0mFb-StlZ1WYGWiJfP" },
           "PyCon 2016": { "url":"https://www.youtube.com/feeds/videos.xml?channel_id=UCwTD5zJbsQGJN75MwbykYNw"},
           "PyCon 2015": { "url":"https://www.youtube.com/feeds/videos.xml?channel_id=UCgxzjK6GuOHVKR_08TT4hJQ"},
           "IEEE Symposium on Security and Privacy": { "url":"https://www.youtube.com/feeds/videos.xml?channel_id=UC6pXMS7qre9GZW7A7FVM90Q" },
           "Nginx": {"url":"https://www.youtube.com/feeds/videos.xml?channel_id=UCy6gt7XvGJ3AGpSon2pS4nQ" },
           "OWASP": {"url":"https://www.youtube.com/feeds/videos.xml?channel_id=UCe8j61ABYDuPTdtjItD2veA" },
-          "OWASP AppSec Tutorial Series": { "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UC5xIEA6L0C2IG3iWgs8M2cA" },
           "MongoDB": { "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCK_m2976Yvbx-TyDLw7n1WA" },
           "TWiT - Security Now!": { "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCNbqa_9xihC8yaV2o6dlsUg" },
           "TWiT - The Tech Guy": { "url":"https://www.youtube.com/feeds/videos.xml?channel_id=UCWAAgw0UiWLZqyA6eJzhbug" },
           "TWiT - The New Screensavers": { "url":"https://www.youtube.com/feeds/videos.xml?channel_id=UCFP9Euhwi3GqbQmWS-M-0hA" },
+          "USENIX": {"url":"https://www.youtube.com/feeds/videos.xml?channel_id=UC4-GrpQBx6WCGwmwozP744Q"}
         }
 
 def addLink(name, url="", img="DefaultVideo.png"):
