@@ -2,11 +2,10 @@ import xbmcplugin, xbmcgui, xbmcaddon, urllib2, sys, urlparse
 import xml.etree.ElementTree as etree
 
 FEEDS = { 
-          "BsidesLV": { "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCpNGmljppAJbTIA5Msms1Pw" },
-          "ZAProxy": { "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UC-3qyzm4f29C12KGp3-12bQ" },
           "EuroPython 2016": { "url":"https://www.youtube.com/feeds/videos.xml?playlist_id=PL8uoeex94UhE3FDvjacSlHFffoNEoPzzm" },
           "AppSec EU 2016": { "url":"https://www.youtube.com/feeds/videos.xml?playlist_id=PLpr-xdpM8wG-Kf1_BOnT2LFZU8_SXfpKL" },
           "EuroPython 2015": { "url":"https://www.youtube.com/feeds/videos.xml?playlist_id=PL8uoeex94UhGGUH0mFb-StlZ1WYGWiJfP" },
+          "PyCon 2017": { "url":"https://www.youtube.com/feeds/videos.xml?channel_id=UCrJhliKNQ8g0qoE_zvL8eVg"},
           "PyCon 2016": { "url":"https://www.youtube.com/feeds/videos.xml?channel_id=UCwTD5zJbsQGJN75MwbykYNw"},
           "PyCon 2015": { "url":"https://www.youtube.com/feeds/videos.xml?channel_id=UCgxzjK6GuOHVKR_08TT4hJQ"},
           "IEEE Symposium on Security and Privacy": { "url":"https://www.youtube.com/feeds/videos.xml?channel_id=UC6pXMS7qre9GZW7A7FVM90Q" },
