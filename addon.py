@@ -2,6 +2,8 @@ import xbmcplugin, xbmcgui, xbmcaddon, urllib2, sys, urlparse
 import xml.etree.ElementTree as etree
 
 FEEDS = { 
+          "DEFCON":{ "url":"https://www.youtube.com/feeds/videos.xml?channel_id=UC6Om9kAkl32dWlDSNlDS9Iw"},
+          "BSides DC 2016": { "url":"https://www.youtube.com/feeds/videos.xml?channel_id=UCVImyGhRATNFGPmJfxaq1dw"},
           "EuroPython 2016": { "url":"https://www.youtube.com/feeds/videos.xml?playlist_id=PL8uoeex94UhE3FDvjacSlHFffoNEoPzzm" },
           "AppSec EU 2016": { "url":"https://www.youtube.com/feeds/videos.xml?playlist_id=PLpr-xdpM8wG-Kf1_BOnT2LFZU8_SXfpKL" },
           "EuroPython 2015": { "url":"https://www.youtube.com/feeds/videos.xml?playlist_id=PL8uoeex94UhGGUH0mFb-StlZ1WYGWiJfP" },
