@@ -3,40 +3,44 @@ import xml.etree.ElementTree as etree
 from urlparse import parse_qsl
 
 YOUTUBE_PLUGIN="plugin://plugin.video.youtube?path=/root/video&action=play_video&videoid=%s"
+YOUTUBE_URL="https://www.youtube.com/feeds/videos.xml"
+YOUTUBE_CHANNEL_URL=YOUTUBE_URL + "?channel_id=%s"
+YOUTUBE_PLAYLIST_URL=YOUTUBE_URL + "?playlist_id=%s"
+YOUTUBE_USER_URL=YOUTUBE_URL + "?user=%s"
 FEED_TYPES=["RSS", "RDF", "ATOM"]
 FEEDS = {
           "Python": {
-            "EuroPython 2017": "https://www.youtube.com/feeds/videos.xml?playlist_id=PL8uoeex94UhG9QAoRICebFpeKK2M0Herh",
-            "EuroPython 2016": "https://www.youtube.com/feeds/videos.xml?playlist_id=PL8uoeex94UhE3FDvjacSlHFffoNEoPzzm",
-            "EuroPython 2015": "https://www.youtube.com/feeds/videos.xml?playlist_id=PL8uoeex94UhGGUH0mFb-StlZ1WYGWiJfP",
-            "PyCon 2017": "https://www.youtube.com/feeds/videos.xml?channel_id=UCrJhliKNQ8g0qoE_zvL8eVg",
-            "PyCon 2016": "https://www.youtube.com/feeds/videos.xml?channel_id=UCwTD5zJbsQGJN75MwbykYNw",
-            "PyCon 2015": "https://www.youtube.com/feeds/videos.xml?channel_id=UCgxzjK6GuOHVKR_08TT4hJQ"
+            "EuroPython 2017": YOUTUBE_PLAYLIST_URL%"PL8uoeex94UhG9QAoRICebFpeKK2M0Herh",
+            "EuroPython 2016": YOUTUBE_PLAYLIST_URL%"PL8uoeex94UhE3FDvjacSlHFffoNEoPzzm",
+            "EuroPython 2015": YOUTUBE_PLAYLIST_URL%"PL8uoeex94UhGGUH0mFb-StlZ1WYGWiJfP",
+            "PyCon 2017": YOUTUBE_CHANNEL_URL%"UCrJhliKNQ8g0qoE_zvL8eVg",
+            "PyCon 2016": YOUTUBE_CHANNEL_URL%"UCwTD5zJbsQGJN75MwbykYNw",
+            "PyCon 2015": YOUTUBE_CHANNEL_URL%"UCgxzjK6GuOHVKR_08TT4hJQ"
           },
           "AppSec": {
-            "AppSec EU 2016": "https://www.youtube.com/feeds/videos.xml?playlist_id=PLpr-xdpM8wG-Kf1_BOnT2LFZU8_SXfpKL",
-            "IEEE Symposium on Security and Privacy": "https://www.youtube.com/feeds/videos.xml?channel_id=UC6pXMS7qre9GZW7A7FVM90Q",
-            "OWASP": "https://www.youtube.com/feeds/videos.xml?channel_id=UCe8j61ABYDuPTdtjItD2veA"
+            "AppSec EU 2016": YOUTUBE_PLAYLIST_URL%"PLpr-xdpM8wG-Kf1_BOnT2LFZU8_SXfpKL",
+            "IEEE Symposium on Security and Privacy": YOUTUBE_CHANNEL_URL%"UC6pXMS7qre9GZW7A7FVM90Q",
+            "OWASP": YOUTUBE_CHANNEL_URL%"UCe8j61ABYDuPTdtjItD2veA"
           },
           "Hacking": {
-            "CCC - 34C3": "https://media.ccc.de/updates.rdf",
-            "DEFCON":"https://www.youtube.com/feeds/videos.xml?channel_id=UC6Om9kAkl32dWlDSNlDS9Iw",
-            "BSides DC 2016": "https://www.youtube.com/feeds/videos.xml?channel_id=UCVImyGhRATNFGPmJfxaq1dw",
-            "USENIX": "https://www.youtube.com/feeds/videos.xml?channel_id=UC4-GrpQBx6WCGwmwozP744Q",
-            "Black Hat": "https://www.youtube.com/feeds/videos.xml?user=BlackHatOfficialYT",
-            "Black Hat USA 2017": "https://www.youtube.com/feeds/videos.xml?playlist_id=PLH15HpR5qRsUyGhBVRDKGrHyQC5G4jQyd"
+            "CCC": "https://media.ccc.de/updates.rdf",
+            "DEFCON": YOUTUBE_CHANNEL_URL%"UC6Om9kAkl32dWlDSNlDS9Iw",
+            "BSides DC 2016": YOUTUBE_CHANNEL_URL%"UCVImyGhRATNFGPmJfxaq1dw",
+            "USENIX": YOUTUBE_CHANNEL_URL%"UC4-GrpQBx6WCGwmwozP744Q",
+            "Black Hat": YOUTUBE_USER_URL%"BlackHatOfficialYT",
+            "Black Hat USA 2017": YOUTUBE_PLAYLIST_URL%"PLH15HpR5qRsUyGhBVRDKGrHyQC5G4jQyd"
           },
           "Database": {
-            "AskTOM TV": "https://www.youtube.com/feeds/videos.xml?playlist_id=PLJMaoEWvHwFKP7uF4l1pXIqMEJ_RatDSq",
-            "Oracle Developers": "https://www.youtube.com/feeds/videos.xml?channel_id=UCdDhYMT2USoLdh4SZIsu_1g",
-            "MongoDB": "https://www.youtube.com/feeds/videos.xml?channel_id=UCK_m2976Yvbx-TyDLw7n1WA"
+            "AskTOM TV": YOUTUBE_PLAYLIST_URL%"PLJMaoEWvHwFKP7uF4l1pXIqMEJ_RatDSq",
+            "Oracle Developers": YOUTUBE_CHANNEL_URL%"UCdDhYMT2USoLdh4SZIsu_1g",
+            "MongoDB": YOUTUBE_CHANNEL_URL%"UCK_m2976Yvbx-TyDLw7n1WA"
           },
           "Linux": {
-            "Linux Training Academy": "https://www.youtube.com/feeds/videos.xml?user=linuxtrainingacademy"
+            "Linux Training Academy": YOUTUBE_USER_URL%"linuxtrainingacademy"
           },
           "Nginx": {
-            "Nginx": "https://www.youtube.com/feeds/videos.xml?channel_id=UCy6gt7XvGJ3AGpSon2pS4nQ",
-            "Nginx Inc.": "https://www.youtube.com/feeds/videos.xml?user=NginxInc"
+            "Nginx": YOUTUBE_CHANNEL_URL%"UCy6gt7XvGJ3AGpSon2pS4nQ",
+            "Nginx Inc.": YOUTUBE_USER_URL%"NginxInc"
           }
         }
 
