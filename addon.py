@@ -17,8 +17,11 @@ FEEDS = {
             "PyCon 2016": YOUTUBE_CHANNEL_URL%"UCwTD5zJbsQGJN75MwbykYNw",
             "PyCon 2015": YOUTUBE_CHANNEL_URL%"UCgxzjK6GuOHVKR_08TT4hJQ"
           },
-          "AppSec": {
+          "AppSec/Crypto": {
             "AppSec EU 2016": YOUTUBE_PLAYLIST_URL%"PLpr-xdpM8wG-Kf1_BOnT2LFZU8_SXfpKL",
+            "AppSec EU 2017": YOUTUBE_PLAYLIST_URL%"PLpr-xdpM8wG8RHOguwOZhUHkKiDeWpvFp",
+            "AppSec USA 2017": YOUTUBE_PLAYLIST_URL%"PLpr-xdpM8wG9emx73fEjX0Cn6VHruJ4-l",
+            "Real World Crypto": YOUTUBE_CHANNEL_URL%"UCQiIRDBmp3pfTdRJ99EeDEw",
             "IEEE Symposium on Security and Privacy": YOUTUBE_CHANNEL_URL%"UC6pXMS7qre9GZW7A7FVM90Q",
             "OWASP": YOUTUBE_CHANNEL_URL%"UCe8j61ABYDuPTdtjItD2veA"
           },
