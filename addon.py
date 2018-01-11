@@ -18,6 +18,7 @@ FEEDS = {
             "PyCon 2015": YOUTUBE_CHANNEL_URL%"UCgxzjK6GuOHVKR_08TT4hJQ"
           },
           "AppSec/Crypto": {
+            "David Wong": YOUTUBE_PLAYLIST_URL%"PLBJMt6zV1c7FN3IjBDr9lydgqGzh_SqHV",
             "AppSec EU 2016": YOUTUBE_PLAYLIST_URL%"PLpr-xdpM8wG-Kf1_BOnT2LFZU8_SXfpKL",
             "AppSec EU 2017": YOUTUBE_PLAYLIST_URL%"PLpr-xdpM8wG8RHOguwOZhUHkKiDeWpvFp",
             "AppSec USA 2017": YOUTUBE_PLAYLIST_URL%"PLpr-xdpM8wG9emx73fEjX0Cn6VHruJ4-l",
@@ -26,6 +27,7 @@ FEEDS = {
             "OWASP": YOUTUBE_CHANNEL_URL%"UCe8j61ABYDuPTdtjItD2veA"
           },
           "Hacking": {
+            "DefCamp": YOUTUBE_USER_URL%"DefCampRO",
             "CCC": "https://media.ccc.de/updates.rdf",
             "DEFCON": YOUTUBE_CHANNEL_URL%"UC6Om9kAkl32dWlDSNlDS9Iw",
             "BSides DC 2016": YOUTUBE_CHANNEL_URL%"UCVImyGhRATNFGPmJfxaq1dw",
