@@ -10,9 +10,11 @@ YOUTUBE_USER_URL=YOUTUBE_URL + "?user=%s"
 FEED_TYPES=["RSS", "RDF", "ATOM"]
 FEEDS = {
           "Python": {
+            "EuroPython 2018": YOUTUBE_PLAYLIST_URL%"PL8uoeex94UhFrNUV2m5MigREebUms39U5",
             "EuroPython 2017": YOUTUBE_PLAYLIST_URL%"PL8uoeex94UhG9QAoRICebFpeKK2M0Herh",
             "EuroPython 2016": YOUTUBE_PLAYLIST_URL%"PL8uoeex94UhE3FDvjacSlHFffoNEoPzzm",
             "EuroPython 2015": YOUTUBE_PLAYLIST_URL%"PL8uoeex94UhGGUH0mFb-StlZ1WYGWiJfP",
+            "PyCon 2018": YOUTUBE_CHANNEL_URL%"UCsX05-2sVSH7Nx3zuk3NYuQ",
             "PyCon 2017": YOUTUBE_CHANNEL_URL%"UCrJhliKNQ8g0qoE_zvL8eVg",
             "PyCon 2016": YOUTUBE_CHANNEL_URL%"UCwTD5zJbsQGJN75MwbykYNw",
             "PyCon 2015": YOUTUBE_CHANNEL_URL%"UCgxzjK6GuOHVKR_08TT4hJQ"
