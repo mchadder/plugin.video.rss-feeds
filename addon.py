@@ -26,7 +26,8 @@ FEEDS = {
             "AppSec USA 2017": YOUTUBE_PLAYLIST_URL%"PLpr-xdpM8wG9emx73fEjX0Cn6VHruJ4-l",
             "Real World Crypto": YOUTUBE_CHANNEL_URL%"UCQiIRDBmp3pfTdRJ99EeDEw",
             "IEEE Symposium on Security and Privacy": YOUTUBE_CHANNEL_URL%"UC6pXMS7qre9GZW7A7FVM90Q",
-            "OWASP": YOUTUBE_CHANNEL_URL%"UCe8j61ABYDuPTdtjItD2veA"
+            "OWASP": YOUTUBE_CHANNEL_URL%"UCe8j61ABYDuPTdtjItD2veA",
+            "RSAC 2018 - Identity Management": YOUTUBE_PLAYLIST_URL%"PLeUGLKUYzh_h0u8Z8vp97R63ELB8q7svb"
           },
           "Hacking": {
             "DefCamp": YOUTUBE_USER_URL%"DefCampRO",
@@ -124,7 +125,7 @@ def showLinks(feed):
 
 def showFeeds(path):
    if path in FEEDS:
-     for key in FEEDS[path]:
+     for key in sorted(FEEDS[path]):
        addDir(name=key, path="%s:%s"%(path,key))
    elif path == "":
      for key in FEEDS:
